@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+  }
+
+  #contactMediums {
+    padding-left: 0px;
+    margin-left: 0px;
+    list-style: none;
+  }
+
+  #relatedEntities {
+    padding-left: 0px;
+    margin-left: 0px;
+    list-style: none;
+  }
+
+  th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+      padding: 0 10px;
+  }
+
+  td.mat-cell.initial {
+    color: #90ee02;
+  }

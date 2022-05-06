@@ -1,0 +1,5 @@
+<div class="container">
+  <ng-container *ngFor="let item of items | async">
+    <app-display [item]="item"></app-display>
+  </ng-container>
+</div>

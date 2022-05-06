@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a mat-button [routerLink]="['/']">
+      <mat-icon>home</mat-icon> Home
+    </a>
+    <span class="vspace"></span>
+    <a mat-button (click)="cart()">
+      <mat-icon>shopping_cart</mat-icon> Cart
+    </a>
+
+    <a mat-button (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon> Logout
+    </a>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>

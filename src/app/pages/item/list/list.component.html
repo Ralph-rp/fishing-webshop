@@ -1,0 +1,21 @@
+<nav>
+  <button mat-raised-button [routerLink]="['./table']" routerLinkActive="router-link-active">
+    Table view
+    <mat-icon>
+      table_view
+    </mat-icon>
+  </button>
+  <button mat-raised-button [routerLink]="['./card']" routerLinkActive="router-link-active">
+    Card view
+    <mat-icon>
+      view_module
+    </mat-icon>
+  </button>
+  <button mat-raised-button [routerLink]="['/item/add']">
+    Add item
+    <mat-icon>
+      add
+    </mat-icon>
+  </button>
+</nav>
+<router-outlet></router-outlet>
