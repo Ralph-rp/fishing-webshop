@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "projekt": {
+    "fishing-webshop": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/projekt",
+            "outputPath": "dist/fishing-webshop",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "projekt:build"
+            "browserTarget": "fishing-webshop:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "projekt:build:production"
+              "browserTarget": "fishing-webshop:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "projekt:build"
+            "browserTarget": "fishing-webshop:build"
           }
         },
         "test": {
@@ -116,18 +116,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "projekt:serve"
+            "devServerTarget": "fishing-webshop:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "projekt:serve:production"
+              "devServerTarget": "fishing-webshop:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "projekt",
+  "defaultProject": "fishing-webshop",
   "cli": {
     "analytics": "6f67d46f-94aa-4d31-a37a-7189cc5fc6cb"
   }

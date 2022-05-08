@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "fishing-webshop",
+    "public": "dist/fishing-webshop",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -16,6 +16,7 @@
   },
   "functions": {
     "predeploy": [
+      "ng build",
       "npm --prefix \"$RESOURCE_DIR\" run lint",
       "npm --prefix \"$RESOURCE_DIR\" run build"
     ]
