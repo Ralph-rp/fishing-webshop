@@ -37,6 +37,18 @@ export class FbBaseService<T extends { id?: string }> {
     return uid;
   }
 
+  getAllWhere(collectionName: string, where: string): Observable<T[]> {
+    return this.afs.collection(collectionName, ref => ref.where('category', '==', where)).valueChanges().pipe(
+      map((data: any) => FbBaseService.convertDate(data))
+    ) as Observable<T[]>;
+  }
+
+  getAllOrderBy(collectionName: string): Observable<T[]> {
+    return this.afs.collection(collectionName, ref => ref.orderBy('name')).valueChanges().pipe(
+      map((data: any) => FbBaseService.convertDate(data))
+    ) as Observable<T[]>;
+  }
+
   getAll(collectionName: string): Observable<T[]> {
     return this.afs.collection(collectionName).valueChanges().pipe(
       map((data: any) => FbBaseService.convertDate(data))

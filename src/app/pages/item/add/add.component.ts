@@ -20,12 +20,38 @@ export class AddComponent implements OnInit {
   constructor(private service: FbBaseService<Item>, private location: Location) { }
 
   ngOnInit(): void {
-    // this.getAll();
   }
 
 
+  getAllWhere(where: string) {
+    this.items = this.service.getAllWhere('items', where);
+    this.items.subscribe(res => {
+      this.item = res[1];
+
+      Object.entries(this.item).forEach(item => {
+        if (item && item[1] && Array.isArray(item[1])) {
+          (this.form.get(item[0]) as FormArray).clear();
+          for (let i = 0; i < item[1].length; ++i) {
+            if (typeof item[1][i] === 'object') {
+              let formGroup = new FormGroup({});
+              Object.entries(item[1][i]).forEach( (attr) => {
+                formGroup.addControl(attr[0], new FormControl(attr[1]));
+              });
+              (this.form.get(item[0]) as FormArray).push(formGroup);
+            } else {
+              (this.form.get(item[0]) as FormArray).push(new FormControl(item[1][i]));
+            }
+          }
+        }
+      });
+
+      this.form.patchValue(this.item);
+
+    });
+  }
+
   getAll() {
-    this.items = this.service.getAll('items');
+    this.items = this.service.getAllOrderBy('items');
     this.items.subscribe(res => {
       this.item = res[1];
 
